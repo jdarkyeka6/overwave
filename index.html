@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#070a11" />
+  <title>OVERWAVE</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app">
+    <header class="topbar">
+      <div class="brand-wrap">
+        <div class="brand-mark"></div>
+        <div>
+          <div class="brand">OVERWAVE</div>
+          <div class="tagline">START IN THE CHAOS.</div>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="stat"><span class="label">WAVE</span><strong id="waveValue">1</strong></div>
+        <div class="stat"><span class="label">CASH</span><strong id="cashValue">$0</strong></div>
+        <div class="stat"><span class="label">CORE</span><strong id="livesValue">100</strong></div>
+        <div class="stat"><span class="label">BEST</span><strong id="bestValue">0</strong></div>
+      </div>
+
+      <div class="controls">
+        <button id="pauseButton" class="control-btn" aria-label="Pause">Ⅱ</button>
+        <button id="speedButton" class="control-btn speed">2×</button>
+      </div>
+    </header>
+
+    <main class="game-layout">
+      <section class="arena-shell">
+        <canvas id="gameCanvas"></canvas>
+        <div id="announcement" class="announcement hidden"></div>
+        <div class="tip" id="tip">Pick a tower or click one already deployed.</div>
+      </section>
+
+      <aside class="sidebar">
+        <div class="panel-heading">
+          <span>ARSENAL</span>
+          <span class="key-hint">1–4</span>
+        </div>
+        <div id="towerShop" class="tower-shop"></div>
+
+        <div class="divider"></div>
+
+        <div class="panel-heading">
+          <span>SELECTED</span>
+          <span id="selectedBadge" class="selected-badge">NONE</span>
+        </div>
+        <div id="selectedPanel" class="selected-panel empty">
+          <div class="empty-icon">⌖</div>
+          <p>Select a deployed tower to upgrade it.</p>
+        </div>
+
+        <div class="wave-panel">
+          <div class="wave-panel-top">
+            <span>NEXT SURGE</span>
+            <strong id="countdownValue">LIVE</strong>
+          </div>
+          <div class="wave-track"><div id="waveProgress" class="wave-progress"></div></div>
+          <div class="wave-meta">
+            <span id="enemyCount">0 targets</span>
+            <span id="dpsValue">0 DPS</span>
+          </div>
+        </div>
+      </aside>
+    </main>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
